@@ -1,0 +1,25 @@
+{
+  "name": "syncspace",
+  "version": "1.0.0",
+  "description": "Sync data between devices",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && nodemon dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nthnua/syncspace.git"
+  },
+  "author": "Nuthan Hegde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nthnua/syncspace/issues"
+  },
+  "homepage": "https://github.com/nthnua/syncspace#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "ts-standard": "^11.0.0",
+    "typescript": "^4.6.2"
+  }
+}
