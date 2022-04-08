@@ -1,17 +1,14 @@
 import { Db, MongoClient } from 'mongodb'
 
 let _db: Db
-const url = process.env.MONGO_URL
 
-const mongoConnect = async (): Promise<void> => {
+const mongoConnect = (): void => {
+  const url = process.env.MONGO_URL
   if (url !== undefined) {
-    try {
-      const client = await MongoClient.connect(url)
+    MongoClient.connect(url).then(client => {
       _db = client.db()
       console.log('DB connected')
-    } catch (e) {
-      console.error(e)
-    }
+    }).catch(err => console.error(err))
   } else {
     throw new Error('DB connection string not specified!')
   }
