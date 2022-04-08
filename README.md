@@ -1,12 +1,12 @@
 # syncspace
 
-Abstract:
+Abstract
 ---
 
 An API (rest/graphql/event based) to create **spaces** such that, multiple clients can join the *space* and data will be shared across the *space*.
 ___
 
-Initial soft specifications:
+Initial soft specifications
 ---
 
 - This could be event driven to make it possible to have instant updates across the *space*.
@@ -19,3 +19,12 @@ Initial soft specifications:
 - Client specifies the 'schema' for the document to be stored / schema-less, hence can be used as a sync module in different projects.
 
 
+Connection flow
+---
+
+User connects using a url --> unique id is extracted form the url --> client is connected to the **space**
+
+After connection
+---
+### On any update to data:
+- emit event to all the clients connected to the **space**
