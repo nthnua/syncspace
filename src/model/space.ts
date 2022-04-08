@@ -13,7 +13,6 @@ class Space {
       data: any
     }
   ]
-  connectionData: string
 
   constructor(name: string, key: string) {
     this.creationTime = Date.now()
@@ -24,7 +23,6 @@ class Space {
     }]
     this.name = name
     this.key = key
-    this.connectionData = randomBytes(200).toString('base64url')
   }
 
   async findSpace(id: string) {
