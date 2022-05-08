@@ -1,4 +1,4 @@
-import express, { json, urlencoded } from 'express'
+import express, { json } from 'express'
 import { mongoConnect } from './util/db'
 import { config } from 'dotenv'
 import { Server } from 'socket.io'
@@ -33,7 +33,7 @@ io.on('connection', (socket) => {
 })
 const port = process.env.PORT ?? '8000'
 app.listen(port, () => {
-  const onConnect = (message: string) => {
+  const onConnect = (message: string): void => {
     console.log(message)
     console.log('Listening at: ', port)
   }

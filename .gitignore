@@ -4,3 +4,4 @@ dist
 *.http
 .env
 *.rest
+syncspace.code-workspace

@@ -1,10 +1,10 @@
-import { hash } from "bcrypt";
-import { RequestHandler } from "express";
-import Space from "../model/space";
+import { hash } from 'bcrypt'
+import { RequestHandler } from 'express'
+import Space from '../model/space'
 
 const createNewSpace: RequestHandler = (req, res, next) => {
-  const name = req.body.name
-  const key = req.body.key
+  const name: string = req.body.name
+  const key: string = req.body.key
   hash(name + key, 10).then(hash => {
     new Space(name, hash).save().then(r => {
       res.status(201).json({
